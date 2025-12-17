@@ -1,13 +1,12 @@
 spring:
-  application:
-    name: task-service
-
   datasource:
     url: jdbc:postgresql://localhost:5432/taskdb
-    username: postgres
-    password: root
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
 
   jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
 
